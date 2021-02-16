@@ -1,0 +1,679 @@
+<!<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title>Final Project</title>   
+            <!-- Load Leaflet from CDN -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+                crossorigin=""/>
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+                crossorigin=""></script>
+
+            <!-- Load Esri Leaflet from CDN -->
+            <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
+                integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
+                crossorigin=""></script>
+         
+            <!--Marker Cluster-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+            <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>        
+            
+            <!--Boot Strap-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+            <!--J Query-->
+            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        
+            <!--AwesomeMarker-->
+            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+	        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+            <link rel="stylesheet" href="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css" />
+            <script src="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script>
+
+            <!--KVS geoJSON-->    
+  
+                <style>    
+            
+                     /*map and containers*/
+                     #map1container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
+                     #map1 {position: relative; height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+    
+                     #map2container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
+                     #map2 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+        
+                     #map3container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
+                     #map3 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+       
+                     #map5container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:99.9%; height:460px;padding 0; }
+
+                     /*legends*/
+                     .legend {
+                        line-height: 18px;
+                        color: #555;
+                        background color:cornsilk
+                        }
+            
+                     .legend i {
+                         width: 10px;
+                         height: 10px;
+                         float: left;
+                         margin-right: 8px;
+                         opacity: 0.7;
+                         }
+                
+                     .info {
+                         padding: 6px 8px;
+                         font: 10px/10px Arial, Helvetica, sans-serif;
+                         background: white;
+                         background: rgba(255,255,255,0.8);
+                         box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                         border-radius: 5px;
+                         }
+            
+                     .info h4 {
+                         margin: 0 0 5px;
+                         color: #777;
+                         }
+            
+                     /*Text Formatingg*/
+                     h1 {text-align: center}
+                     h2 {margin-left: 5px; text-align: center}
+                     p  {margin-left: 5px;}
+                     h3 {text-align: center}
+                     h4 {text-align: center}
+            
+                    </style>
+            </head>
+    <body>  
+      <!--drop down menu list-->
+        <!--Title-->
+        <h2>Evidenced Based Public Policy, Criminal Justice, and Implications for Iowa</h2>
+        <h3>HDFS 585 KEPE, Spring 2021</h3>
+        <h4>Kelsey Van Selous MSW, LCSW
+        <br>Human Development and Family Studies PhD Student</h4>
+      
+        <!--Maps and Containers-->
+        <div id='map1container'>
+            <h2>Criminal Justice in the United States</h2>
+            <p><b>Background:</b> XXX.</p>  
+            <p><b>Map:</b> XX </p>
+            <p><b>Interactivity:</b>XX </p>            
+        </div>   
+ 
+            <div id="map1"></div>
+        
+        <div id='map2container'>
+            <h2>Criminal Justice In Iowa </h2>
+            <p><b>Background:</b> XXX.</p>  
+            <p><b>Map:</b> XX </p>
+            <p><b>Interactivity:</b>XX </p>    
+        </div>  
+        
+            <div id="map2"></div>
+
+        <div id='map3container'>
+            <h2>Substance Use Recovery Providers</h2>
+            <p><b>Background:</b> XXX.</p>  
+            <p><b>Map:</b> XX </p>
+            <p><b>Interactivity:</b>XX </p>    
+        </div>  
+        
+            <div id="map3"></div>
+        
+         <div id='map5container'>
+            <p>*<em>The page was created for a KEPE Presentation for HDFS 585</em></p>
+            <br>
+            <h5><b>References:</b></h5>
+             Drake, E. K., Aos, S., & Miller, M. G. (2009). <em>Evidence-based public policy options to reduce crime and criminal justice costs: Implications in Washington State</em>. Victims and Offenders, 4(2), 170-196.Washington State Institute for Public Policy.
+          </div>
+       
+        <script>
+                
+            //map 1
+            var OSM1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18
+                });	
+            
+            var map1 = L.map('map1', {
+                center: [38,-97],
+                zoom: 4,
+                layers: [OSM1]
+		          });
+            
+            //map 1 styling function    
+            function getColorMort(d) {
+		          return d  > 40  ? '#FF0000' :
+				    d     > 30  ? '#DC143C' :
+				    d > 20  ? '#CD5C5C' :
+                    d > 10   ? '#F08080' :
+				    d > 0   ? '#E9967A' :
+                    "#FFFFFF"; 
+                    }
+            
+	        function style1(feature) {
+                return {
+			     weight: 1,
+			     opacity: 1,
+			     color: 'white',
+			     fillOpacity: 0.7,
+			     fillColor: getColorMort(feature.properties.USSubsstanceInducedMort2013_2018_CrudeRate)
+		         };
+                 }
+            
+            //map 1 highlighting & pop up functions
+            function highlightFeature(e) {
+                var layer = e.target;
+                layer.setStyle({
+                    weight: 4,
+                    color: 'grey',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                    });
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                    }
+                    }
+
+            function resetHighlight(e) {
+                mort.resetStyle(e.target);
+                }
+
+            function onEachFeature(feature, layer) {
+                layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight
+                });
+                if (feature.properties) {
+                    layer.bindPopup("<b>State: </b>" + feature.properties.NAME + "<br><b>XXX </b>" + feature.properties.USSubsstanceInducedMort2013_2018_CrudeRate);
+                    }
+                    }
+            
+            //map 1 data          
+            var mort = L.geoJson(mort, {
+                style: style1,
+                onEachFeature: onEachFeature
+                }).addTo(map1);
+            
+            //map 1 legend
+            var legend = L.control({
+                position: 'bottomleft'
+                });
+                legend.onAdd = function(map1) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                Mort = [0, 10, 20, 30, 40],
+                labels = [];
+                div.innerHTML += "<b>XXX</b><br> 2013-2018<br>";
+                for (var i = 0; i < Mort.length; i++) {
+                    div.innerHTML +=
+                    '<i style="background:' + getColorMort(Mort[i] + 1) + '"></i> ' +
+                    Mort[i] + (Mort[i + 1] ? '&ndash;' + Mort[i + 1] + '<br>' : '+');
+                    }
+                return div;
+                };
+                legend.addTo(map1);
+
+            //map  2   
+            var OSM2 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18
+                });	
+            
+            var map2 = L.map('map2', {
+                center: [42,-93],
+                zoom: 7,
+                layers: [OSM2]
+		          });
+            
+            //map 2 coloring & style functions 
+            function getColor2a(d) {
+		      return d  > 200  ? '#4A235A' :
+                     d  > 150  ? '#6C3483' :
+				     d  > 100  ? '#7D3C98' :
+				     d  > 50   ? '#A569BD' :
+				     d  >25   ? '#BB8FCE' :
+                     d  >10   ? '#E8DAEF' :
+                     "#F9EBEA"; 
+                     }
+             
+            function style2a(feature) {
+                return {
+                    weight: 1,
+                    opacity: 1,
+                    color: 'white',
+                    fillOpacity: 0.7,
+			        fillColor: getColor2a(feature.properties.IowaSubstanceInducedDeaths1999_2018_Deaths)
+		            };
+	               }    
+            
+            function getColor2b(d) {
+		      return d  > 25  ? '#1B4F72' :
+                     d  > 20  ? '#2874A6' :
+				     d  > 15  ? '#2980B9' :
+				     d  > 10   ? '#7FB3D5' :
+				     d  >5   ? '#D4E6F1' :
+                     d  >0   ? '#EAF2F8' :
+                     "#F9EBEA"; 
+                     }
+             
+            function style2b(feature) {
+                return {
+                    weight: 1,
+                    opacity: 1,
+                    color: 'white',
+                    fillOpacity: 0.7,
+			        fillColor: getColor2b(feature.properties.IowaPercentBelowPoverty2013_2018_Percent_BelowPoverty)
+		            };
+	               }   
+            
+            //map 2 highlighting & pop up functions
+            function highlightFeature2a(e) {
+                var layer = e.target;
+                layer.setStyle({
+                    weight: 4,
+                    color: 'grey',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                    });
+                    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                        layer.bringToFront();
+                        }
+                        }
+
+            function resetHighlight2a(e) {
+                IMort.resetStyle(e.target);
+                }
+
+            function onEachFeature2a(feature, layer) {
+                layer.on({
+                mouseover: highlightFeature2a,
+                mouseout: resetHighlight2a
+                });
+            if (feature.properties) {
+                layer.bindPopup("<b>County: </b>" + feature.properties.COUNTY + "<br><b>XXX: </b>" + feature.properties.IowaSubstanceInducedDeaths1999_2018_Deaths);
+                }
+                }
+            
+            function highlightFeature2b(e) {
+                var layer = e.target;
+                layer.setStyle({
+                    weight: 4,
+                    color: 'grey',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                    });
+                    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                        layer.bringToFront();
+                        }
+                        }
+            
+            function resetHighlight2b(e) {
+                IPov.resetStyle(e.target);
+                }
+            
+            function onEachFeature2b(feature, layer) {
+                layer.on({
+                mouseover: highlightFeature2b,
+                mouseout: resetHighlight2b
+                });
+            if (feature.properties) {
+                layer.bindPopup("<b>County: </b>" + feature.properties.COUNTY + "<br><b>XXX </b>" + feature.properties.IowaPercentBelowPoverty2013_2018_Percent_BelowPoverty);
+                }
+                }
+            
+            //map 2 data          
+            var IMort = L.geoJson(IMort, {
+                style: style2a,
+                onEachFeature: onEachFeature2a
+                }).addTo(map2);  
+            
+            var IPov = L.geoJson(IPov, {
+                style: style2b,
+                onEachFeature: onEachFeature2b
+                })  
+            
+            //map 2 legends
+            var legend2a = L.control({
+                position: 'bottomleft'
+                });
+
+            legend2a.onAdd = function(map2) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                IMort = [10, 25, 50, 100, 150, 200],
+                labels = [];
+                div.innerHTML += "<b>XX/b><br>XX<br>";
+                for (var i = 0; i < IMort.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor2a(IMort[i] + 1) + '"></i> ' +
+                        IMort[i] + (IMort[i + 1] ? '&ndash;' + IMort[i + 1] + '<br>' : '+');
+                        }
+                return div;
+                };
+                legend2a.addTo(map2);
+     
+            var legend2b = L.control({
+                position: 'bottomleft'
+                });
+
+            legend2b.onAdd = function(map2) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                IPov = [0, 5, 10, 15, 20, 25],
+                labels = [];
+                div.innerHTML += "<b>XXX</b><br>2013-2018<br>";
+                for (var i = 0; i < IPov.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor2b(IPov[i] + 1) + '"></i> ' +
+                        IPov[i] + (IPov[i + 1] ? '&ndash;' + IPov[i + 1] + '<br>' : '+');
+                        }
+                return div;
+                };
+             
+  
+            //map 2 layer control
+		    var baseMap = {
+		      "OpenStreetMap": OSM2
+                };
+       		
+		    var overlayMaps = {
+		      "XXX": IMort,
+              "Precent Living Below Poverty Rate": IPov
+		      };			
+
+            L.control.layers(baseMap, overlayMaps).addTo(map2);	
+            
+            //legend filtering
+            map2.on('overlayremove', function (eventLayer) {
+                console.log(eventLayer.name  + "off");
+                if (eventLayer.name == "Substance Induced Deaths from 1999-2018") {
+                this.removeControl(legend2a);
+                }else if (eventLayer.name == "Precent Living Below Poverty Rate"){
+                this.removeControl(legend2b);
+	            }
+                });
+
+            map2.on('overlayadd', function (eventLayer) {
+	          console.log(eventLayer.name + "on");
+	           if (eventLayer.name == "Substance Induced Deaths from 1999-2018") {
+               legend2a.addTo(this);
+               }else if (eventLayer.name == "Precent Living Below Poverty Rate"){
+		       legend2b.addTo(this);
+               }	
+               });
+              
+               
+            //map 3   
+            var OSM3 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18
+                });	
+            
+            var map3 = L.map('map3', {
+                center: [42,-93],
+                zoom: 6,
+                layers: [OSM3]
+		        });
+            
+            //map 3 provider data, style, and function
+            var markers = L.markerClusterGroup();
+            
+            var IRP =L.geoJSON(IRP, {
+                style: function (feature) {
+                return {
+                    stroke: false,
+                    fillColor: 'FFFFFF',
+                    fillOpacity: 0
+                    };
+                    },
+                onEachFeature: function (feature, layer) {
+                    popupOptions = {maxWidth: 200}; 
+                    if (feature.properties.URL == "NA"){ 
+                    layer.bindPopup("<b>Site name: </b>" + feature.properties.Name +  
+                                    "<br><b>Link:</b> No URL available",popupOptions);}
+                    else{layer.bindPopup("<b>Site name: </b>" + feature.properties.Name + 
+                                         "<br><b>Link: </b>" + '<a href="'+feature.properties.URL+'">'+feature.properties.URL+'</a>'                   
+                    ,popupOptions);   }
+                    }
+                    })      
+                markers.addLayer(IRP);
+                map3.addLayer(markers);
+             
+            var circle = {
+                radius: 4,
+                fillColor: "#ff7800",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+                };
+             
+            var SingleIRP =L.geoJSON(SIRP, {
+                pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, circle);
+                },
+                onEachFeature: function (feature, layer) {
+                    popupOptions = {maxWidth: 200}; 
+                    if (feature.properties.URL == "NA"){ 
+                    layer.bindPopup("<b>Site name: </b>" + feature.properties.Name +  
+                                    "<br><b>Link:</b> No URL available",popupOptions);}
+                    else{layer.bindPopup("<b>Site name: </b>" + feature.properties.Name + 
+                                         "<br><b>Link: </b>" + '<a href="'+feature.properties.URL+'">'+feature.properties.URL+'</a>'                   
+                    ,popupOptions);   }
+                    }
+                    })
+            
+             var circle2 = {
+                 radius: 4,
+                 fillColor: "#green",
+                 color: "#000",
+                 weight: 1,
+                 opacity: 1,
+                 fillOpacity: 0.8
+                 };
+          
+             var TX =L.geoJSON(TX, {
+                 pointToLayer: function (feature, latlng) {
+                 return L.circleMarker(latlng, circle2);
+                 },
+                 onEachFeature: function (feature, layer) {
+                    popupOptions = {maxWidth: 200}; 
+                    if (feature.properties.URL == "NA"){ 
+                    layer.bindPopup("<b>Site name: </b>" + feature.properties.Name +  
+                                    "<br><b>Link:</b> No URL available",popupOptions);}
+                    else{layer.bindPopup("<b>Site name: </b>" + feature.properties.Name + 
+                                         "<br><b>Link: </b>" + '<a href="'+feature.properties.URL+'">'+feature.properties.URL+'</a>'                   
+                    ,popupOptions);   }
+                    }
+                    })  
+
+             function getColor3(d) {
+                 return d  > 1000  ? '#873600' :
+                        d  > 500  ? '#A04000' :
+				        d  > 100  ? '#BA4A00' :
+				        d  > 50   ? '#D35400' :
+				        d  > 10   ? '#DC7633' :
+				        d  > 0   ? '#E59866' :
+                        "#E59866"; 
+                        }
+            
+            function style3(feature) {
+                return {
+                    weight: 1,
+                    opacity: 1,
+                    color: 'white',
+                    fillOpacity: 0.7,
+			        fillColor: getColor3(feature.properties.Confirmed)
+		            };
+	               }   
+            
+            //map 3 data
+            var COVID =L.esri.featureLayer({     
+                url: 'https://services.arcgis.com/vPD5PVLI6sfkZ5E4/ArcGIS/rest/services/IA_COVID19_Cases/FeatureServer/0', style: style3, 
+                onEachFeature: function
+                (feature, layer) {
+                popupOptions = {maxWidth: 200};
+                layer.bindPopup("<b>County: </b>" + feature.properties.Name +
+                    "<br><b>Confirmed COVID Cases:</b>" + feature.properties.Confirmed
+                    ,popupOptions);
+                    }
+                    }) 
+              
+            var imort = L.geoJson(imort, {
+                style: style2a,
+                onEachFeature: onEachFeature2a
+                }) 
+            
+            var ipov = L.geoJson(ipov, {
+                style: style2b,
+                onEachFeature: onEachFeature2b
+                })  
+
+            //map 3 legend
+            var legend3a = L.control({
+                position: 'bottomleft'
+                });
+
+            legend3a.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                COVID = [0, 10, 50, 100, 500, 1000],
+                labels = [];
+                div.innerHTML += "<b>XXX</b><br>XXX<br>";
+                for (var i = 0; i < COVID.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor3(COVID[i] + 1) + '"></i> ' +
+                        COVID[i] + (COVID[i + 1] ? '&ndash;' + COVID[i + 1] + '<br>' : '+');
+                        }
+                return div;
+                };
+
+            var legend3b = L.control({
+                position: 'bottomleft'
+                });
+
+            legend3b.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                imort = [10, 25, 50, 100, 150, 200],
+                labels = [];
+                div.innerHTML += "<b>XXX>";
+                for (var i = 0; i < imort.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor2a(imort[i] + 1) + '"></i> ' +
+                        imort[i] + (imort[i + 1] ? '&ndash;' + imort[i + 1] + '<br>' : '+');
+                        }
+                return div;
+                };
+            
+            var legend3c = L.control({
+                position: 'bottomleft'
+                });
+
+            legend3c.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                ipov = [0, 5, 10, 15, 20, 25],
+                labels = [];
+                div.innerHTML += "<b>Percent Below Poverty</b><br>2013-2018<br>";
+                for (var i = 0; i < ipov.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor2b(ipov[i] + 1) + '"></i> ' +
+                        ipov[i] + (ipov[i + 1] ? '&ndash;' + ipov[i + 1] + '<br>' : '+');
+                        }
+                return div;
+                };
+            
+            var legend3d = L.control({
+                position: 'bottomleft'
+                });
+
+        
+            legend3d.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                SingleIRP = [],
+                labels = [];
+                div.innerHTML += "<b>XXX<br>Single Layer: orange circles</b>"
+                return div;
+                };
+            
+             var legend3e = L.control({
+                position: 'bottomleft'
+                });
+
+            legend3e.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                TX = [],
+                labels = circle2;
+                div.innerHTML += "<b>XXX<br>Single Layer: black circles</b><br>";
+                return div;
+                };
+            
+            var legend3f = L.control({
+                position: 'bottomleft'
+                });
+
+            legend3f.onAdd = function(map3) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                markers = [],
+                labels = circle2;
+                div.innerHTML += "<b>XXX<br>Cluster Layer</b><br>";
+                return div;
+                };
+            legend3f.addTo(map3);
+            
+            //map 3 Layer Control
+		    var baseMap = {
+		      "OpenStreetMap": OSM3
+                };
+       		
+		    var overlayMaps = {
+		      "Iowa Recovery Providers Cluster Layer": markers,
+              "Iowa Recovery Providers Single Layer": SingleIRP, 
+              "Iowa Substance Use Treatment Providers Single Layer": TX,
+              "Substance Deaths": imort,
+              "Percent Poverty": ipov,
+              "COVID": COVID
+		      };			
+         
+            L.control.layers(baseMap, overlayMaps).addTo(map3);	
+            
+             //legend filtering
+            map3.on('overlayremove', function (eventLayer) {
+                console.log(eventLayer.name  + "off");
+                if (eventLayer.name == "COVID") {
+                this.removeControl(legend3a);
+                }else if (eventLayer.name == "Percent Poverty"){
+                this.removeControl(legend3c);
+	            }else if (eventLayer.name == "Substance Deaths"){
+                this.removeControl(legend3b);
+                }else if (eventLayer.name == "Iowa Recovery Providers Single Layer"){
+                this.removeControl(legend3d);
+                }else if (eventLayer.name == "Iowa Substance Use Treatment Providers Single Layer"){
+                this.removeControl(legend3e);
+                }else if (eventLayer.name == "Iowa Recovery Providers Cluster Layer"){
+                this.removeControl(legend3f);
+                }});
+
+            map3.on('overlayadd', function (eventLayer) {
+	          console.log(eventLayer.name + "on");
+	           if (eventLayer.name == "COVID") {
+               legend3a.addTo(this);
+               }else if (eventLayer.name == "Percent Poverty"){
+		       legend3c.addTo(this);
+               }else if (eventLayer.name == "Substance Deaths"){
+		       legend3b.addTo(this);
+               }else if (eventLayer.name == "Iowa Recovery Providers Single Layer"){
+               legend3d.addTo(this);
+               }else if (eventLayer.name == "Iowa Substance Use Treatment Providers Single Layer"){
+               legend3e.addTo(this);
+               }else if (eventLayer.name == "Iowa Recovery Providers Cluster Layer"){
+               legend3ef.addTo(this);
+               }});
+              
+
+
+           </script>
+      </body>
+</html>
