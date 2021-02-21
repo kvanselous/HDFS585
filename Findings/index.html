@@ -4,38 +4,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>KVS KEPE</title>   
-            <!-- Load Leaflet from CDN -->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-                crossorigin=""></script>
 
-            <!-- Load Esri Leaflet from CDN -->
-            <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
-                integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
-                crossorigin=""></script>
-         
-            <!--Marker Cluster-->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-            <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>        
-            
             <!--Boot Strap-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-            <!--J Query-->
-            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        
-            <!--AwesomeMarker-->
-            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-	        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-            <link rel="stylesheet" href="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css" />
-            <script src="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script>
-
-            <!--KVS geoJSON-->    
+   
   
                 <style>    
                 /*Drop Down Menu*/
@@ -89,47 +62,7 @@
                      .dropdown:hover .dropdown-content {
                         display: block;
                         }
-                     /*map and containers*/
-                     #map1container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map1 {position: relative; height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-    
-                     #map2container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map2 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-        
-                     #map3container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map3 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-       
-                     #map5container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:99.9%; height:460px;padding 0; }
-
-                     /*legends*/
-                     .legend {
-                        line-height: 18px;
-                        color: #555;
-                        background color:cornsilk
-                        }
-            
-                     .legend i {
-                         width: 10px;
-                         height: 10px;
-                         float: left;
-                         margin-right: 8px;
-                         opacity: 0.7;
-                         }
-                
-                     .info {
-                         padding: 6px 8px;
-                         font: 10px/10px Arial, Helvetica, sans-serif;
-                         background: white;
-                         background: rgba(255,255,255,0.8);
-                         box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                         border-radius: 5px;
-                         }
-            
-                     .info h4 {
-                         margin: 0 0 5px;
-                         color: #777;
-                         }
-            
+                    
                      /*Text Formatingg*/
                      h1 {text-align: center}
                      h2 {margin-left: 5px; text-align: center}
@@ -150,14 +83,12 @@
             <li><a href="https://kvanselous.github.io/HDFS585/StrengLimRec/"><b>Strengths, Limitations, & Recommendations</b></a></li>
             <li><a href="https://kvanselous.github.io/HDFS585/Report/" target="_blank"><b>Full Article</b></a></li>
             <li><a href="https://kvanselous.github.io/HDFS585/References/"><b>References</b></a></li>
-      </ul>  
-    
+      </ul>   
         <!--Title-->
         <h2>Findings</h2>
-        <p> Drake, Aos, & Miller (2009) complied these results into five categories, separating the results by adult programs, juvenile programs, prevention programs, adult programs requiring additional research, and juvenile programs requiring additional research.  Largely, all the programs included for prevention of crime reduction showed a significant decrease in crime and return of tax payer dollars.  These programs included pre-k education for low-income 3–4-year-old children and nurse family partnerships for mothers and children. Programs for adults that decreased crime and costs to tax payers included vocational and general education programs in prison, Cognitive Behavioral Therapy programs in prisons and communities, drug treatment in prison such as therapeutic communities and outpatient services, drug treatment in community, and adult drug courts.  Programs for juvenile's that decreased crime and costs to tax payers included programs with Functional Family Therapy, Teen courts, restorative justice programs for low-risk offenders, and family integrated transition programs.  Programs that did not show a decrease in crime and increased costs for tax payers included Intensive Supervision programs for adults and juveniles.  One program for youth that increased crime and increased cost to tax payers included the Scared Straight program. </p>   
-        <p>To view the full list of findings and results, please click <a href="https://kvanselous.github.io/HDFS585/Report/" target="_blank"><b>here</b></a> and navigate to page 184 to view the results in table Table 1.  You can also navigate to the article by clicking the <em>Full Article</em> option in the menu above. </p>
-              
-            <script>
-           </script>
+        <img src="Meta.png" class="center" alt="Are We Meta Yet?" width="400px" height ="250px"align=right>
+        <!--source: https://www.gapingvoid.com/blog/2009/02/12/meta/ -->
+        <p>Drake, Aos, & Miller (2009) complied these results into five categories, separating the results by adult programs, juvenile programs, prevention programs, adult programs requiring additional research, and juvenile programs requiring additional research.  Largely, all the programs included for prevention of crime reduction showed a significant decrease in crime and positive economic impact.  These programs included pre-k education for low-income 3–4-year-old children and nurse family partnerships for mothers and children. Programs for adults that decreased crime and had a positive economic impact included vocational and general education programs in prison, Cognitive Behavioral Therapy programs in prisons and communities, drug treatment in prison such as therapeutic communities and outpatient services, drug treatment in community settings, and adult drug courts.  Programs for juveniles that decreased crime and had a positive economic impact included programs with Functional Family Therapy, teen courts, restorative justice programs for low-risk offenders, and family integrated transition programs.  Programs that did not show a decrease in crime and had a negative economic impact included intensive supervision programs for adults and juveniles.  One program for youth that increased crime, increased costs to victims, and increased cost to tax payers included the <a href="https://www.prisonlegalnews.org/news/2016/jun/3/scared-straight-programs-are-counterproductive/" target="_blank">Scared Straight </a> program. </p>          
+        <p>To view the full list of findings and results, please click <a href="https://kvanselous.github.io/HDFS585/Report/" target="_blank">here</a> and navigate to page 184 to view the results in table Table 1.  Keep in mind, the results for each category are based on the average of all the programs evaluated within that category, as well as the assumption that the programs perform averagely (Drake, Aos, & Miller, 2009).  Additionally, the program’s impact on crime is used to estimate the cost benefit of having reduced crime victims per adult or youth, the cost benefit of reduced crime on taxpayers per adult or youth, a comparison of the program cost with alternative options per person, and the difference between the total cost vs the total benefits of the program per adult or youth participant.  You can also navigate to the article by clicking the <b>Full Article</b> option in the menu above. </p>     
       </body>
 </html>

@@ -4,40 +4,12 @@
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>KVS KEPE</title>   
-            <!-- Load Leaflet from CDN -->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-                crossorigin=""></script>
 
-            <!-- Load Esri Leaflet from CDN -->
-            <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
-                integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
-                crossorigin=""></script>
-         
-            <!--Marker Cluster-->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-            <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>        
-            
             <!--Boot Strap-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-            <!--J Query-->
-            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        
-            <!--AwesomeMarker-->
-            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-	        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-            <link rel="stylesheet" href="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css" />
-            <script src="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script>
-
-            <!--KVS geoJSON-->    
-  
-                <style>    
+ 
+        <style>    
                 /*Drop Down Menu*/
                     ul {
                         list-style-type: none;
@@ -89,47 +61,7 @@
                      .dropdown:hover .dropdown-content {
                         display: block;
                         }
-                     /*map and containers*/
-                     #map1container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map1 {position: relative; height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-    
-                     #map2container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map2 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-        
-                     #map3container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map3 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-       
-                     #map5container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:99.9%; height:460px;padding 0; }
-
-                     /*legends*/
-                     .legend {
-                        line-height: 18px;
-                        color: #555;
-                        background color:cornsilk
-                        }
-            
-                     .legend i {
-                         width: 10px;
-                         height: 10px;
-                         float: left;
-                         margin-right: 8px;
-                         opacity: 0.7;
-                         }
-                
-                     .info {
-                         padding: 6px 8px;
-                         font: 10px/10px Arial, Helvetica, sans-serif;
-                         background: white;
-                         background: rgba(255,255,255,0.8);
-                         box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                         border-radius: 5px;
-                         }
-            
-                     .info h4 {
-                         margin: 0 0 5px;
-                         color: #777;
-                         }
-            
+ 
                      /*Text Formatingg*/
                      h1 {text-align: center}
                      h2 {margin-left: 5px; text-align: center}
@@ -154,9 +86,9 @@
     
         <!--Title-->
         <h2>Strengths, Limitations, and Recommendations </h2>
-        <h4>A review of strengths, limits, and recommendations</h4>
-            <script>
+        <p>Overall, I think this study was a strong example of how to assess state wide programing in effort to inform future legislation efforts. The studies sample size of 545 articles identified through the meta-analysis was also a strength, as the study only targeted outcome-based program evaluations that utilized comparison-group research designs.  This study also attempted to account for quality of the research design based on the 5-point research design scale, and estimated a reduction in the effect size of the program over time based on the idea that programs may decrease effectiveness over time.  These strategies are a strength for the study, as the evaluators tried to account for real world issues that may occur and impact the program.   Additionally, the article clearly outlined many of its coding decisions, strategies for analysis, and results.</p>   
+        <p> Although, this research design was able to capture the difference the program made in crime outcomes, as well as the overall impact on tax-payer dollars, this study did not consider how program outcomes may change based on location, culture, gender, or race.  Additionally, because this program only selected studies that were based on precipitants that completed the program, it was unable to capture outcomes and costs associated with participants that dropped out of the program, or capture why participants may drop out of the program. </p>   
+        <p> In sum, we come back to the question of, is a meta-analysis of program evaluations, a program evaluation?  I think the answer to this question is best captured by the authors in which they state ‘Thus, while determining whether a program reduces crime remains the necessary first condition for rational public policy making, an economic analysis constitutes the necessary additional condition for identifying viable and fiscally prudent options’ (p 194).  As a result, although this study assesses program evaluation to inform state level decisions based on programing, I believe this study should be conceptualized as an economic analysis and not a program evaluation.  </p>  
 
-           </script>
       </body>
 </html>

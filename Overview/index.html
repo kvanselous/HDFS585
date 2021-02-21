@@ -4,39 +4,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>KVS KEPE</title>   
-            <!-- Load Leaflet from CDN -->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-                crossorigin=""></script>
-
-            <!-- Load Esri Leaflet from CDN -->
-            <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
-                integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
-                crossorigin=""></script>
-         
-            <!--Marker Cluster-->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-            <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>        
-            
+ 
             <!--Boot Strap-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-            <!--J Query-->
-            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        
-            <!--AwesomeMarker-->
-            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-	        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-            <link rel="stylesheet" href="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css" />
-            <script src="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script>
-
-            <!--KVS geoJSON-->    
-  
                 <style>    
                 /*Drop Down Menu*/
                     ul {
@@ -89,48 +61,7 @@
                      .dropdown:hover .dropdown-content {
                         display: block;
                         }
-                     /*map and containers*/
-                     #map1container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map1 {position: relative; height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-    
-                     #map2container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map2 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-        
-                     #map3container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map3 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-       
-                     #map5container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:99.9%; height:460px;padding 0; }
-
-                     /*legends*/
-                     .legend {
-                        line-height: 18px;
-                        color: #555;
-                        background color:cornsilk
-                        }
-            
-                     .legend i {
-                         width: 10px;
-                         height: 10px;
-                         float: left;
-                         margin-right: 8px;
-                         opacity: 0.7;
-                         }
-                
-                     .info {
-                         padding: 6px 8px;
-                         font: 10px/10px Arial, Helvetica, sans-serif;
-                         background: white;
-                         background: rgba(255,255,255,0.8);
-                         box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                         border-radius: 5px;
-                         }
-            
-                     .info h4 {
-                         margin: 0 0 5px;
-                         color: #777;
-                         }
-            
-                     /*Text Formatingg*/
+                    /*Text Formatingg*/
                      h1 {text-align: center}
                      h2 {margin-left: 5px; text-align: center}
                      p  {margin-left: 5px;}
@@ -155,15 +86,10 @@
         <!--Title-->
         <h2>Overview</h2>
         
-        <p> Overall, Darke, Aos, & Miller (2009) from the Washington State Institute for Public Policy sought to answer a question from the from Washington legislature: <b>Are there “evidenced-based” options than can reduce the future need for prison beds, save money for state and local taxpayers, and contribute to lower crime rates” (p 170)? </b> This study evaluated this question by completing a meta-analysis of program evaluation articles that prevented or treated criminal outcomes, estimating the average cost taxpayers paid to support the program, and estimating the programs impact on the population of the state involved with the criminal justice system.  These variables were then used to complete a cost-benefit analysis to assess if the program had a statistically significant impact on crime, as well as if the program changed the overall cost by taxpayers.  Although the study found a numerous crime treatment and prevention program that reduced crime for adults and youth, they also found a handful of programs that did not have an impact on crime or increased crime.  </p> 
+        <p> Overall, Darke, Aos, & Miller (2009) from the <a href="https://www.wsipp.wa.gov/" target="_blank"> Washington State Institute for Public Policy</a> sought to answer a question from the from Washington legislature: <b>"Are there “evidenced-based” options than can reduce the future need for prison beds, save money for state and local taxpayers, and contribute to lower crime rates” (p. 170)? </b> This study evaluated this question by completing a meta-analysis of program evaluation articles that prevented or treated criminal outcomes, estimating the average cost to taxpayers, and estimating the programs impact on the population of the state involved with the criminal justice system.  These variables were then used to complete a <b><em>cost-benefit analysis</em></b> to assess if the program had a statistically significant impact on crime, as well as if the program changed the overall cost shouldered by taxpayers.  Although the study found numerous crime treatment and prevention programs that reduced crime for adults and youth, they also found a handful of programs that did not have an impact on crime or increased crime <b>AND</b> increased cost to taxpayers.  </p> 
         <p> Strengths of this evaluation include the size of its sample, ability to effectively communicate its research findings and coding strategies, and its selection criteria for choosing high value program evaluation articles to review.  Some of the limitations of this study include its inability to capture systematic and spatial patterns related to crime and how this impacts programming.  Additionally, I found myself frequently debating this question: <em> because this is a meta-analysis of program evaluations and leans towards economic outcomes, is it a program evaluation? </em>  
-        <p> Before we begin, please take a moment to rank the quality of this program evaluation.  To do so, please go to <a href="https://www.menti.com/hgr7r5h1gf" target="_blank">https://www.menti.com/hgr7r5h1gf</a> and rank the quality of this program evaluation from a score of 1-5, one being very low-quality program evaluation and five being very high-quality program evaluation (Don’t worry, this is anonymous). Once you’ve submitted your answers, your answers will be averaged with the group and will display in the box below.  After you’ve completed this step, please navigate to the Methods & Results section with the toolbar above to take a closer look into this paper’s methods and results.  </p> 
- 
-        
+        <p> Before we begin, please take a moment to rank the quality of this program evaluation.  To do so, please go to <a href="https://www.menti.com/hgr7r5h1gf" target="_blank">https://www.menti.com/hgr7r5h1gf</a> and rank the quality of this program evaluation from a score of 1-5, one being very low-quality program evaluation and five being very high-quality program evaluation (Don’t worry, this is anonymous). Once you’ve submitted your answers, your answers will be averaged with the group and will display in the box below.  After you’ve completed this step, please navigate to the <b>Methods & Results</b> section with the toolbar above to take a closer look into this paper’s methods and results.  </p>        
         <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/6674748c2e962a4f5a10dc8af0dd67cd/b0377c274c04' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
       
-        <script>
-
-           </script>
       </body>
 </html>

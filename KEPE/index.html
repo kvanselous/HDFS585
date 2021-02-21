@@ -4,39 +4,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>KVS KEPE</title>   
-            <!-- Load Leaflet from CDN -->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-                integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-                crossorigin=""></script>
-
-            <!-- Load Esri Leaflet from CDN -->
-            <script src="https://unpkg.com/esri-leaflet@2.4.0/dist/esri-leaflet.js"
-                integrity="sha512-kq0i5Xvdq0ii3v+eRLDpa++uaYPlTuFaOYrfQ0Zdjmms/laOwIvLMAxh7cj1eTqqGG47ssAcTY4hjkWydGt6Eg=="
-                crossorigin=""></script>
-         
-            <!--Marker Cluster-->
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-            <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-            <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>        
-            
+        
             <!--Boot Strap-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-            <!--J Query-->
-            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        
-            <!--AwesomeMarker-->
-            <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
-	        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-            <link rel="stylesheet" href="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css" />
-            <script src="PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script>
-
-            <!--KVS geoJSON-->    
-  
                 <style>    
                 /*Drop Down Menu*/
                     ul {
@@ -89,46 +61,6 @@
                      .dropdown:hover .dropdown-content {
                         display: block;
                         }
-                     /*map and containers*/
-                     #map1container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map1 {position: relative; height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-    
-                     #map2container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map2 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-        
-                     #map3container {position:absolute; background-color:#F0F0F0; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:430px;padding 0; }
-                     #map3 {position: relative;  height: 430px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-       
-                     #map5container {position:absolute; background-color:#D3D3D3; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:99.9%; height:460px;padding 0; }
-
-                     /*legends*/
-                     .legend {
-                        line-height: 18px;
-                        color: #555;
-                        background color:cornsilk
-                        }
-            
-                     .legend i {
-                         width: 10px;
-                         height: 10px;
-                         float: left;
-                         margin-right: 8px;
-                         opacity: 0.7;
-                         }
-                
-                     .info {
-                         padding: 6px 8px;
-                         font: 10px/10px Arial, Helvetica, sans-serif;
-                         background: white;
-                         background: rgba(255,255,255,0.8);
-                         box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                         border-radius: 5px;
-                         }
-            
-                     .info h4 {
-                         margin: 0 0 5px;
-                         color: #777;
-                         }
             
                      /*Text Formatingg*/
                      h1 {text-align: center}
@@ -155,17 +87,14 @@
         <!--Title-->
         <h2>Home</h2>
       
-        <video width="300" height="300" controls>
-            <source src="Welcome.MOV" class="center" type="video/mov">
-               <source src="Welcome.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
-        <iframe width="420" height="315"
-src="https://player.vimeo.com/video/401017176">
+        <iframe width="570" height="320"
+src="https://player.vimeo.com/video/401017176" align=right>  Your browser does not support the video tag.
 </iframe>
-        
-        
+        <p>Welcome to Kelsey Van Selous's KEPE page for HDFS 585.  This page is best viewed on a maximized computer screen.  For the best experience, please navigate the menu from left to right to explore this KEPE.  If you would like to reference the article during your exploration, please click <b>Full Article</b> in the menu above.  
+        <p>If at any point you get an <em>error message</em> or are unable to see the content, feel free to try a different internet browser or contact kvansel@iastate.edu for additional recommendations. </p>  
+        <p>As you explore, you'll notice there are activities that use the tool <a href="https://mentimeter.com" target=_blank></a>Mentimeter, an online interactive tool used to support audience engagement during presentations.  For an introduction to this tool, please watch the video on the right.  To begin this KEPE and to participate in the first Mentimeter presentation, please navigate to the <b>Evaluation Overview</b> in the menu above. </p>
+        <h3>Thank you and enjoy the site!</h3>
         <script>
            
 
